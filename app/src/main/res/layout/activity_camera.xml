@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llOpt"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="60dp">
+
+        <Spinner
+            android:gravity="center_vertical"
+            android:id="@+id/spinnerTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:entries="@array/task_type_array" />
+
+        <Spinner
+            android:gravity="center_vertical"
+            android:id="@+id/spinnerModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="true"
+            android:entries="@array/model_array" />
+
+        <Button
+            android:id="@+id/btnPicDetect"
+            android:layout_marginLeft="50dp"
+            android:text="选择图片"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <SurfaceView
+        android:visibility="gone"
+        android:id="@+id/cameraView"
+        app:layout_constraintTop_toBottomOf="@id/llOpt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="480px"
+        android:layout_height="640px"/>
+
+    <com.example.djolo.view.AutoFitTextureView
+        android:id="@+id/textureView"
+        app:layout_constraintTop_toBottomOf="@id/llOpt"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="1080px"
+        android:layout_height="1920px"/>
+
+    <ImageView
+        android:id="@+id/ivLabel"
+        app:layout_constraintTop_toBottomOf="@id/llOpt"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="1080px"
+        android:layout_height="1920px"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
